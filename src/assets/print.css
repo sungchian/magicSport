@@ -1,0 +1,23 @@
+@media print {
+  body {
+    background-color: #fff;
+  }
+
+  @page {
+    size: a4 landscape;
+    margin: 0.5cm;
+    orphans: 4;
+    widows: 2;
+  }
+
+  .aside {
+    display: none;
+    width: 0;
+  }
+
+  .aside-drap,
+  .page-toolbar,
+  .suffix-element {
+    display: none;
+  }
+}

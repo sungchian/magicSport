@@ -1,0 +1,40 @@
+export default {
+  "page.title": "管理者列表",
+  "field.id": "ID",
+  "field.account": "帳號",
+  "field.username": "名稱",
+  "field.memberRosterId": "前端帳號",
+  "field.isEnable": "是否啟用",
+  "field.isSystemAdmin": "是否為系統管理員",
+
+  "field.status.enabled": "啟用",
+  "field.status.disabled": "停用",
+  "field.created": "建立時間",
+  "field.updated": "修改時間",
+  "field.createdBy": "建立者",
+  "field.updatedBy": "修改者",
+  "field.actions": "功能",
+
+  "form.create.title": "新增管理者",
+  "form.update.title": "修改管理者",
+  "form.update.success": "管理者「{account}」資料已修改",
+  "form.account": "帳號",
+  "form.username": "名稱",
+  "form.password": "密碼",
+  "form.img": "圖片",
+
+  "form.isEnable": "是否啟用",
+  "form.isSystemAdmin": "是否為系統管理員",
+
+  "button.create": "新增管理者",
+  "enabled.confirm.title": "確定要啟用「{account}」?",
+  "enabled.confirm.text": "此項操作會使得該帳號功能全部啟用",
+  "enabled.success": "管理者「{account}」已啟用",
+  "disabled.confirm.title": "確定要停用「{account}」?",
+  "disabled.confirm.text": "此項操作會使得該帳號功能全部停用",
+  "disabled.success": "管理者「{account}」已停用",
+
+  "form.invalid.account": "帳號欄位不可為空",
+  "form.invalid.username": "名稱欄位不可為空",
+  "form.invalid.password": "密碼欄位不可為空",
+};

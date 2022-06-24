@@ -1,0 +1,28 @@
+export default {
+  "page.title": "未審核文章",
+  "field.categoryName": "分類",
+  "field.shortContent": "短標題",
+  "field.mainImg": "主圖",
+  "field.label": "標籤",
+  "field.greatCount": "按讚數",
+  "field.isTop": "置頂",
+  "field.publisher": "發布者",
+
+  "field.status.top": "置頂",
+  "field.created": "建立時間",
+  "field.updated": "修改時間",
+  "field.actions": "審核",
+
+  "form.audit.title": "審核文章",
+  "form.audit.success": "文章「{name}」已審核通過",
+  "form.audit.success.fail": "文章「{name}」審核不通過，原因: {reason}",
+  "form.audit.fail.reason": "不通過的原因",
+  "form.categoryName": "文章類別",
+  "form.shortContent": "短標題",
+  "form.title": "標題",
+  "form.mainImg": "主圖",
+  "form.label": "標籤",
+  "form.isTop": "置頂",
+  "form.type": "類型",
+  "form.articleContent": "文章內容",
+};
