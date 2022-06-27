@@ -1,401 +1,102 @@
 <template>
-  <div>
-    <h1 class="text-xl font-bold leading-9">Widgets Sample</h1>
-    <h2 class="text-lg font-bold leading-6 mt-6">Tooltip</h2>
-    <Tooltip content="Hola" class="mr-3"><label>Hover ME!</label></Tooltip>
-    <Tooltip content="Hola" class="mr-3" placement="right">
-      <label>Hover ME!</label>
-    </Tooltip>
-    <Tooltip content="Hola" class="mr-3" placement="bottom">
-      <label>Hover ME!</label>
-    </Tooltip>
-    <Tooltip content="Hola" class="mr-3" placement="left">
-      <label>Hover ME!</label>
-    </Tooltip>
+  <div class="px-40 flex flex-col items-center mx-auto container">
+    <div class="w-full mt-8 h-40 border">輪播圖</div>
 
-    <h2 class="text-lg font-bold leading-6 mt-6">Select</h2>
-    <h3 class="text-md font-medium leading-6">Default</h3>
-    <div class="w-64">
-      <Select
-        v-model="form.select"
-        placeholder="請選擇..."
-        :options="[
-          {
-            value: 'Y',
-            children: 'Yes',
-          },
-          {
-            value: 'N',
-            children: 'No',
-          },
-        ]"
-      >
-      </Select>
-    </div>
-    <div>value: {{ form.select }}</div>
-    <h3 class="text-md font-medium leading-6 mt-3">Readonly Style</h3>
-    <div class="w-64">
-      <Select
-        v-model="form.select"
-        placeholder="請選擇..."
-        :options="[
-          {
-            value: 'Y',
-            children: 'Yes',
-          },
-          {
-            value: 'N',
-            children: 'No',
-          },
-        ]"
-        readonly
-      >
-      </Select>
-    </div>
-    <h3 class="text-md font-medium leading-6 mt-3">Multiple</h3>
-    <div class="w-64">
-      <Select
-        v-model="form.select2"
-        placeholder="請選擇..."
-        :options="[
-          {
-            value: 'Red',
-            children: 'Red',
-          },
-          {
-            value: 'Blue',
-            children: 'Blue',
-            disabled: true,
-          },
-          {
-            value: 'Yellow',
-            children: 'Yellow',
-          },
-          {
-            value: 'Orange',
-            children: 'Orange',
-          },
-        ]"
-      >
-      </Select>
-    </div>
-    <div class="mb-3">value: {{ form.select2 }}</div>
-    <h3 class="text-md font-medium leading-6 mt-3">With Filter</h3>
-    <div class="w-64">
-      <Select
-        v-model="form.select3"
-        placeholder="請選擇..."
-        :options="[
-          {
-            value: 'Red',
-            children: 'Red',
-          },
-          {
-            value: 'Blue',
-            children: 'Blue',
-          },
-          {
-            value: 'Yellow',
-            children: 'Yellow',
-          },
-          {
-            value: 'Orange',
-            children: 'Orange',
-          },
-        ]"
-        input
-      >
-      </Select>
-    </div>
-    <h3 class="text-md font-medium leading-6 mt-3">With Template</h3>
-    <div class="w-64">
-      <Select
-        v-model="form.select4"
-        placeholder="請選擇..."
-        :options="[
-          {
-            value: 'Red',
-            children: 'Red',
-            icon: 'far fa-circle text-red-400',
-          },
-          {
-            value: 'Blue',
-            children: 'Blue',
-            icon: 'far fa-circle text-blue-400',
-          },
-          {
-            value: 'Yellow',
-            children: 'Yellow',
-            icon: 'far fa-circle text-yellow-400',
-          },
-          {
-            value: 'Orange',
-            children: 'Orange',
-            icon: 'far fa-circle',
-            disabled: true,
-          },
-        ]"
-      >
-        <template v-slot="{ item, active, onClick }">
-          <div
-            class="flex py-2 px-4 text-sm space-x-2"
-            :class="[
-              active && 'bg-gray-200 hover:bg-gray-200',
-              item.disabled && 'bg-gray-100 text-gray-300',
-              !item.disabled && 'cursor-pointer hover:bg-gray-100',
-            ]"
-            @click="onClick"
-          >
-            <div><i :class="item.icon"></i></div>
-            <div>{{ item.children }}({{ item.value }})</div>
+    <div class="flex w-full">
+      <div class="w-2/3 pr-12">
+        <div class="flex space-x-8 mt-8" v-for="i in 2" :key="i">
+          <div style="width: 23em">
+            <img
+              class="object-cover w-full"
+              style="height: 17em"
+              src="../../assets/images/girl1.jpeg"
+            />
+            <div
+              class="absolute truncate -translate-y-6 text-gray-300"
+              style="width: 23em; background-color: rgba(0, 0, 0, 0.5)"
+            >
+              124341243412434124341243412124341243412434124341243412434434
+            </div>
           </div>
-        </template>
-      </Select>
+          <ul class="p-2 first-line:text-2xl space-y-2" style="width: 31em">
+            <li class="truncate" v-for="i in 8" :key="i">
+              124341243412434124341243412124341243412434124341243412434434
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="w-1/3 mt-10">
+        <div class="space-y-4">
+          <div class="flex space-x-6" v-for="i in 3" :key="i">
+            <div class="w-2/5">
+              <img
+                class="object-cover w-full"
+                style="height: 5em"
+                src="../../assets/images/girl2.jpeg"
+              />
+            </div>
+            <div class="w-full line-clamp h-12">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Quaerat
+              sequi esse necessitatibus adipisci quas aut voluptas voluptatibus
+              sunt ducimus quisquam, provident magni eos obcaecati impedit!
+              beatae dolor sint eos!
+            </div>
+          </div>
+        </div>
+
+        <div class="mt-8">
+          <div class="flex w-full" v-for="i in 8" :key="i">
+            <div class="flex mt-2 w-full" :class="{ 'text-2xl mt-0': i === 1 }">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 448 512"
+                width="20"
+                height="20"
+                v-if="i !== 1"
+              >
+                <path
+                  fill="green"
+                  d="M384 32H64C28.65 32 0 60.65 0 96v320c0 35.34 28.65 64 64 64h320c35.35 0 64-28.66 64-64V96C448 60.65 419.3 32 384 32zM312.3 273.6l-112 104C195.8 381.8 189.9 384 184 384c-3.25 0-6.5-.6562-9.594-2C165.7 378.2 160 369.5 160 360v-208c0-9.531 5.656-18.19 14.41-22c8.75-3.75 18.94-2.062 25.94 4.406l112 104C317.2 242.1 320 249.3 320 256S317.2 269 312.3 273.6z"
+                />
+              </svg>
+              <div class="truncate w-full" :class="{ 'ml-2': i !== 1 }">
+                12434124341243412434124341212434243412434124341243412434434
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
-    <h3 class="text-md font-medium leading-6 mt-3">With Virtual</h3>
-    <div class="w-64">
-      <Select
-        v-model="form.select5"
-        placeholder="請選擇..."
-        :options="
-          times(
-            (idx) => ({
-              value: idx,
-              children: idx,
-            }),
-            10000
-          )
-        "
-        virtual
-      >
-      </Select>
-    </div>
-    <h2 class="text-lg font-bold leading-6 mt-6">Button</h2>
-    <h3 class="text-md font-medium leading-6">Change Theme</h3>
+
     <div>
-      <Button class="mr-1" @click="setTheme('cyan')" type="cyan"
-        >Change To Cyan</Button
-      >
-      <Button class="mr-1" @click="setTheme('orange')" type="orange">
-        Change To Orange
-      </Button>
-      <Button class="mr-1" @click="setTheme('teal')" type="teal">
-        Change To Teal
-      </Button>
-      <Button class="mr-1" @click="setTheme('pink')" type="pink">
-        Change To Pink
-      </Button>
-      <Button class="mr-1" @click="setTheme('rose')" type="rose">
-        Change To Rose
-      </Button>
-    </div>
-    <h3 class="text-md font-medium leading-6">Styles</h3>
-    <div>
-      <Button class="mr-1" @click="F">Primary</Button>
-      <Button class="mr-1" @click="F" type="cyan">Cyan</Button>
-      <Button class="mr-1" @click="F" type="default">Default</Button>
-      <Button class="mr-1" @click="F" type="dark">Dark</Button>
-      <Button class="mr-1" @click="F" type="light">Light</Button>
-      <Button class="mr-1" @click="F" type="green">Green</Button>
-      <Button class="mr-1" @click="F" type="red">Red</Button>
-      <Button class="mr-1" @click="F" type="yellow">Yellow</Button>
-      <Button class="mr-1" @click="F" type="orange">Orange</Button>
-      <Button class="mr-1" @click="F" type="purple">Purple</Button>
-    </div>
-    <h3 class="text-md font-medium leading-6 mt-3">Disabled</h3>
-    <div>
-      <Button class="mr-1" @click="F" disabled>Primary</Button>
-      <Button class="mr-1" @click="F" type="cyan" disabled>Cyan</Button>
-      <Button class="mr-1" @click="F" type="default" disabled>Default</Button>
-      <Button class="mr-1" @click="F" type="dark" disabled>Dark</Button>
-      <Button class="mr-1" @click="F" type="light" disabled>Light</Button>
-      <Button class="mr-1" @click="F" type="green" disabled>Green</Button>
-      <Button class="mr-1" @click="F" type="red" disabled>Red</Button>
-      <Button class="mr-1" @click="F" type="yellow" disabled>Yellow</Button>
-      <Button class="mr-1" @click="F" type="orange" disabled>Orange</Button>
-      <Button class="mr-1" @click="F" type="purple" disabled>Purple</Button>
-    </div>
-    <h3 class="text-md font-medium leading-6 mt-3">Sizes</h3>
-    <div>
-      <Button class="mr-1" @click="F" size="xs">Extra small</Button>
-      <Button class="mr-1" @click="F" size="sm">Small</Button>
-      <Button class="mr-1" @click="F" size="md">Base</Button>
-      <Button class="mr-1" @click="F" size="lg">Large</Button>
-    </div>
-    <h3 class="text-md font-medium leading-6 mt-3">Loading</h3>
-    <div>
-      <Button class="mr-1" @click="F" size="xs" loading>Primary</Button>
-      <Button class="mr-1" @click="F" size="sm" loading>Primary</Button>
-      <Button class="mr-1" @click="F" size="md" loading>Primary</Button>
-      <Button class="mr-1" @click="F" size="lg" loading>Primary</Button>
-    </div>
-    <h2 class="text-lg font-bold leading-6 mt-6">Datetime Picker</h2>
-    <h3 class="text-md font-medium leading-6">Normal</h3>
-    <div class="w-64">
-      <DatetimePicker
-        v-model="form.date"
-        placeholder="請選擇..."
-        tools:today
-        tools:clear
-        input
-      />
-    </div>
-    <h3 class="text-md font-medium leading-6 mt-3">Only Date</h3>
-    <div class="w-64">
-      <DatetimePicker
-        v-model="form.date"
-        placeholder="請選擇..."
-        tools:today
-        tools:clear
-        no:time
-      />
-    </div>
-    <h3 class="text-md font-medium leading-6 mt-3">Has Max DateTime</h3>
-    <div class="w-64">
-      <DatetimePicker
-        v-model="form.date"
-        placeholder="請選擇..."
-        max-date-time="2022-01-20 20:00:00"
-        tools:today
-        tools:clear
-      />
-    </div>
-    <h2 class="text-lg font-bold leading-6 mt-6">
-      Plugin:
-      <a
-        href="https://sweetalert2.github.io/"
-        class="text-cyan-500 underline hover:text-cyan-600"
-        target="_blank"
-      >
-        SweetAlert
-      </a>
-    </h2>
-    <h3 class="text-md font-medium leading-6 mt-3">Alert</h3>
-    <div>
-      <Button class="mr-1" @click="alert('info')" type="default">Info</Button>
-      <Button class="mr-1" @click="alert('success')" type="green">
-        Success
-      </Button>
-      <Button class="mr-1" @click="alert('warning')" type="yellow">
-        Warning
-      </Button>
-      <Button class="mr-1" @click="alert('error')" type="red">Error</Button>
-    </div>
-    <h3 class="text-md font-medium leading-6 mt-3">Confirm</h3>
-    <div>
-      <Button class="mr-1" @click="confirm('info')" type="default">Info</Button>
-      <Button class="mr-1" @click="confirm('success')" type="green">
-        Success
-      </Button>
-      <Button class="mr-1" @click="confirm('warning')" type="yellow">
-        Warning
-      </Button>
-      <Button class="mr-1" @click="confirm('error')" type="red">Error</Button>
-    </div>
-    <h3 class="text-md font-medium leading-6 mt-3">Custom Icon Color</h3>
-    <div>
-      <Button class="mr-1" type="green" @click="customConfirm('green')">
-        Green Question
-      </Button>
-      <Button class="mr-1" type="red" @click="customConfirm('red')">
-        Red Question
-      </Button>
+      <div>
+        <div>
+          <div>熱門視頻</div>
+          <div></div>
+        </div>
+
+        <div>
+          <div>比賽直播</div>
+          <div></div>
+        </div>
+      </div>
+
+      <div>
+        <div>數據</div>
+        <div></div>
+      </div>
     </div>
   </div>
 </template>
-<script>
-import { reactive, inject } from "vue";
-import {
-  ALERT_INFO,
-  ALERT_SUCCESS,
-  ALERT_WARNING,
-  ALERT_ERROR,
-  CONFIRM_INFO,
-  CONFIRM_WARNING,
-  CONFIRM_SUCCESS,
-  CONFIRM_ERROR,
-  CONFIRM_QUESTION_GREEN,
-  CONFIRM_QUESTION_RED,
-} from "@/plugins/sweetalert";
-import Tooltip from "@/widgets/tooltip";
-import Select from "@/widgets/select";
-import Button from "@/widgets/button";
-import DatetimePicker from "@/widgets/datetime-picker";
-import { times, F } from "ramda";
-export default {
-  needAuth: false,
-  components: {
-    Tooltip,
-    Select,
-    Button,
-    DatetimePicker,
-  },
-  setup() {
-    const swal = inject("$swal");
-    const storage = inject("$storage");
-    const form = reactive({
-      select: "Y",
-      select2: ["Red", "Yellow"],
-      select3: [],
-      select4: "",
-      select5: -1,
-      date: "",
-    });
-    const alert = (type) => {
-      const options = {
-        confirmButtonText: "確認",
-        title: "這是一個彈窗",
-        text: "描述文字描述文字描述文字描述文字",
-      };
-      const types = {
-        info: ALERT_INFO,
-        success: ALERT_SUCCESS,
-        warning: ALERT_WARNING,
-        error: ALERT_ERROR,
-      };
-      swal.fire({ ...types[type], ...options });
-    };
-    const confirm = (type) => {
-      const options = {
-        confirmButtonText: "確認",
-        cancelButtonText: "取消",
-        title: "這是一個彈窗",
-        text: "描述文字描述文字描述文字描述文字",
-      };
-      const types = {
-        info: CONFIRM_INFO,
-        success: CONFIRM_SUCCESS,
-        warning: CONFIRM_WARNING,
-        error: CONFIRM_ERROR,
-      };
-      swal.fire({ ...types[type], ...options });
-    };
-    const customConfirm = (type) => {
-      const options = {
-        confirmButtonText: "確認",
-        cancelButtonText: "取消",
-        title: "這是一個彈窗",
-        text: "描述文字描述文字描述文字描述文字",
-      };
-      const types = {
-        green: CONFIRM_QUESTION_GREEN,
-        red: CONFIRM_QUESTION_RED,
-      };
-      swal.fire({ ...types[type], ...options });
-    };
-    const setTheme = (value) => {
-      storage.set("theme", value);
-      window.location.reload(true);
-    };
-    return {
-      form,
-      F,
-      times,
-      alert,
-      confirm,
-      customConfirm,
-      setTheme,
-    };
-  },
-};
-</script>
+
+<script></script>
+
+<style lang="scss" scoped>
+.line-clamp {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+</style>
