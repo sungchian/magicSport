@@ -70,14 +70,14 @@ const tree = {
   MODULE_LIVE1: {
     children: [
       {
-        code: "ANALYSIS_USER",
+        code: "LIVE_6",
       },
     ],
   },
   MODULE_LIVE2: {
     children: [
       {
-        code: "ACCOUNT_MEMBER",
+        code: "LIVE_8",
       },
     ],
   },
@@ -98,7 +98,7 @@ const tree = {
   MODULE_LIVE5: {
     children: [
       {
-        code: "BALL_MANAGE",
+        code: "LIVE_1",
       },
     ],
   },
@@ -112,14 +112,14 @@ const tree = {
   MODULE_LIVE7: {
     children: [
       {
-        code: "BALL_MANAGE",
+        code: "DOWNLOAD",
       },
     ],
   },
   MODULE_LIVE8: {
     children: [
       {
-        code: "BALL_MANAGE",
+        code: "DOWNLOAD",
       },
     ],
   },

@@ -1,7 +1,7 @@
 <template>
   <nav class="bg-white border-b border-gray-200 fixed w-min z-30 h-16">
     <div class="px-3 py-3 lg:px-5 lg:pl-3">
-      <div class="flex items-center justify-between">
+      <div class="flex items-center justify-around">
         <div class="flex items-center justify-start">
           <a class="header-title">
             <span class="header-title__text">這邊到時候換img</span>

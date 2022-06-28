@@ -9,7 +9,7 @@ body {
 }
 
 html {
-  font-size: 14px;
+  font-size: 16px;
 }
 
 #app {
@@ -19,6 +19,10 @@ html {
 .w-min {
   width: 100%;
   min-width: 768px;
+}
+
+.container {
+  width: 1200px;
 }
 
 [multiple]:focus,
@@ -512,4 +516,8 @@ div:focus {
 }
 .z-60 {
   z-index: 60;
+}
+
+.tit-text {
+  @apply w-28 h-10 text-center text-white bg-cyan-600 text-2xl
 }

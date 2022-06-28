@@ -1,7 +1,7 @@
 <template>
   <div class="container m-auto flex">
     <the-live-nav class="w-1/6 mr-10"></the-live-nav>
-    <div class="right w-full">
+    <div class="right w-5/6">
       <div class="block-title h-20 flex justify-between border-b-2">
         <span class="tit-text inline-block">比賽直播</span>
         <div class="w-64">
@@ -15,7 +15,12 @@
         </div>
       </div>
       <div class="list-data">
-        <div class="match-list"></div>
+        <div class="match-list h-auto">
+          <p class="date">
+            <img src="" alt="" />
+            2020-06-30
+          </p>
+        </div>
       </div>
     </div>
   </div>
