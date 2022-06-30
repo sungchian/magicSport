@@ -55,11 +55,11 @@
             </div>
           </transition>
         </a>
-        <!-- <the-aside-nav
+        <the-aside-nav
           :open="open"
           :nodes="node.children"
           v-show="nav.open === node.code"
-        /> -->
+        />
       </div>
       <a
         v-else
@@ -76,7 +76,7 @@
           name="fade"
           enter-active-class="animate__animated animate__fadeIn animate__faster"
         >
-          <span class="ml-3" v-show="open">{{ t(`node.${node.code}`) }}</span>
+          <span class="ml-3" v-show="open">{{ t(`${node.code}`) }}</span>
         </transition>
       </a>
     </li>

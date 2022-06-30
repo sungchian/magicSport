@@ -1,18 +1,19 @@
 export const modules = {
   MODULE_MAIN: "main",
 
-  MODULE_ANALYSIS: "analysis",
+  MODULE_LIVE: "live",
   MODULE_ACCOUNT: "account",
   MODULE_ARTICLE: "article",
   MODULE_BALL: "ball",
   MODULE_SETTING: "setting",
+  // ----------------------------------------------------------------
 };
 
 export const paths = {
   MAIN_DASHBOARD: "/main/dashboard",
   MAIN_SAMPLE: "/main/sample",
 
-  ANALYSIS_USER: "/analysis/user",
+  ANALYSIS_USER: "/live/6",
 
   ARTICLE_CATEGORY_MANAGE: "/article/category",
   ARTICLE_MANAGE: "/article/manage",
@@ -26,6 +27,11 @@ export const paths = {
   ACCOUNT_MANAGER: "/account/manager",
 
   SETTING_USERINFO: "/setting/user-info",
+  // ----------------------------------------------------------------
+  LIVE_1: "/live/1",
+  LIVE_6: "/live/6",
+  LIVE_8: "/live/8",
+  DOWNLOAD: "/downloadApp",
 };
 
 export const icons = {

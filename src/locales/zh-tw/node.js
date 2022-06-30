@@ -33,5 +33,5 @@ export default {
   MODULE_LIVE5: "直播",
   MODULE_LIVE6: "數據",
   MODULE_LIVE7: "下載",
-  MODULE_LIVE8: "懂球號",
+  MODULE_LIVE8: "魔球號",
 };
