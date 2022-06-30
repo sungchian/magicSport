@@ -338,7 +338,7 @@ div:focus {
   @apply cursor-pointer hover:bg-gray-200;
 }
 .custom-table > tbody > tr > td {
-  @apply p-3 text-sm font-normal;
+  @apply p-3 text-lg font-normal;
 }
 
 .loader {
@@ -519,5 +519,21 @@ div:focus {
 }
 
 .tit-text {
-  @apply w-28 h-10 text-center text-white bg-cyan-600 text-2xl
+  @apply w-28 h-10 text-center text-white bg-cyan-600 text-2xl flex items-center justify-center
+}
+.more-text {
+  @apply w-28 text-center text-green-600 text-lg cursor-pointer flex items-center justify-center
+}
+
+.line-clamp {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.line-clamp2 {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }

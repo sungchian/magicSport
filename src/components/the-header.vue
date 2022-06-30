@@ -1,5 +1,7 @@
 <template>
-  <nav class="bg-white border-b border-gray-200 fixed w-min z-30 h-16">
+  <nav
+    class="bg-white border-b border-gray-200 fixed w-min z-30 h-16 flex items-center justify-around shadow"
+  >
     <div class="px-3 py-3 lg:px-5 lg:pl-3">
       <div class="flex items-center justify-around">
         <div class="flex items-center justify-start">
@@ -22,105 +24,6 @@
           </ul>
         </div>
         <div class="flex items-center">
-          <a
-            class="inline-flex p-2 mr-2 rounded items-center font-medium cursor-pointer hover:bg-gray-200 text-gray-600"
-          >
-            <svg
-              class="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9"
-              ></path>
-            </svg>
-          </a>
-          <a
-            class="inline-flex p-2 mr-2 rounded items-center font-medium cursor-pointer hover:bg-gray-200 text-gray-600"
-          >
-            <svg
-              class="w-6 h-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                stroke-width="2"
-                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
-              ></path>
-            </svg>
-          </a>
-          <Dropdown class="inline-flex" placement="right">
-            <template #trigger="{ onOpen }">
-              <a
-                class="p-2 rounded flex items-center font-medium cursor-pointer hover:bg-gray-200 text-gray-600"
-                @click="onOpen"
-              >
-                <span>{{ userName }}</span>
-                <b class="ml-2">
-                  <svg
-                    class="w-3 h-3"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                    xmlns="http://www.w3.org/2000/svg"
-                  >
-                    <path
-                      stroke-linecap="round"
-                      stroke-linejoin="round"
-                      stroke-width="2"
-                      d="M19 9l-7 7-7-7"
-                    ></path>
-                  </svg>
-                </b>
-              </a>
-            </template>
-            <template #content="{ onClose }">
-              <div class="w-40 divide-y divide-gray-100">
-                <div class="dropdown__content__header">
-                  <span class="block text-sm">{{ userName }}</span>
-                  <span class="block text-sm font-medium truncat">管理員</span>
-                </div>
-                <ul class="dropdown__content__body">
-                  <li>
-                    <router-link
-                      to="/setting/user-info"
-                      class="dropdown__content__body__item"
-                      @click="onClose"
-                    >
-                      個人資料
-                    </router-link>
-                  </li>
-                  <li>
-                    <a
-                      href="#"
-                      class="dropdown__content__body__item"
-                      @click.prevent="onClose"
-                    >
-                      帳號設定
-                    </a>
-                  </li>
-                </ul>
-                <div class="py-1">
-                  <a
-                    href="#"
-                    @click.prevent="logout"
-                    class="dropdown__content__body__item"
-                  >
-                    登出
-                  </a>
-                </div>
-              </div>
-            </template>
-          </Dropdown>
           <button
             class="flex lg:hidden text-gray-600 hover:text-gray-900 cursor-pointer p-2 hover:bg-gray-100 focus:bg-gray-100 focus:ring-2 focus:ring-gray-100 rounded"
             @click="toggleTopNav"
@@ -175,14 +78,11 @@ import useI18n from "@/hooks/use-i18n";
 import { modules, paths } from "@/constants/nav";
 import tree from "@/constants/_tree";
 /** widget */
-import Dropdown from "@/widgets/dropdown";
 /** helper */
 import { map, split, keys } from "ramda";
 export default {
   name: "TheHeader",
-  components: {
-    Dropdown,
-  },
+  components: {},
   props: {
     topnav: Boolean,
     leftnav: Boolean,
