@@ -27,7 +27,7 @@ export default {
   props: {
     type: {
       type: String,
-      default: "primary",
+      default: "green",
       validator(val) {
         return includes(val, [
           "primary",

@@ -10,7 +10,7 @@ import requestDuplicate from "@/middlewares/request-duplicate";
 
 const instance = axios.create();
 
-instance.defaults.baseURL = process.env.VUE_APP_REMOTE_API;
+instance.defaults.baseURL = process.env.VUE_APP_REMOTE_API2;
 //下列不需要了
 // instance.defaults.transformResponse = (data) => {
 //   try {

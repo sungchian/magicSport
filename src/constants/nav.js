@@ -28,9 +28,9 @@ export const paths = {
 
   SETTING_USERINFO: "/setting/user-info",
   // ----------------------------------------------------------------
-  LIVE_1: "/live/1",
-  LIVE_6: "/live/6",
-  LIVE_8: "/live/8",
+  LIVE_1: "/live/-1",
+  LIVE_6: "/live/543",
+  LIVE_8: "/live/129",
   DOWNLOAD: "/downloadApp",
 };
 

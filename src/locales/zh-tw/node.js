@@ -26,7 +26,7 @@ export default {
 
   // ------------------------------------------------------------------------------------------------
   MODULE_MAIN: "首頁",
-  MODULE_LIVE1: "中超",
+  MODULE_LIVE1: "中甲",
   MODULE_LIVE2: "德甲",
   MODULE_LIVE3: "動態",
   MODULE_LIVE4: "視頻",

@@ -1,12 +1,23 @@
 <template>
   <nav
-    class="bg-white border-b border-gray-200 fixed w-min z-30 h-16 flex items-center justify-around shadow"
+    class="bg-white border-b border-gray-200 fixed w-min z-30 h-16 flex items-center justify-around s01"
   >
     <div class="px-3 py-3 lg:px-5 lg:pl-3">
       <div class="flex items-center justify-around">
         <div class="flex items-center justify-start">
           <a class="header-title">
-            <span class="header-title__text">這邊到時候換img</span>
+            <span class="header-title__text flex items-center">
+              <img
+                src="../assets/images/icon_logo_header.png"
+                alt=""
+                class="w-10 h-12"
+              />
+              <img
+                src="../assets/images/icon_logo_name.png"
+                alt=""
+                class="h-10"
+              />
+            </span>
           </a>
           <ul class="list-none pl-2.5 lg:pl-12 lg:flex hidden">
             <router-link
@@ -14,7 +25,7 @@
               :key="category.code"
               :data-link="category.to"
               :to="category.to"
-              class="inline-flex px-5 items-center whitespace-nowrap -my-8 font-medium cursor-pointer hover:bg-gray-200"
+              class="inline-flex px-5 items-center whitespace-nowrap -my-8 font-medium cursor-pointer hover:bg-gray-200 text-lg"
               :class="[category.active && 'header-nav--active']"
             >
               <li>

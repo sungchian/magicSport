@@ -83,7 +83,7 @@ div:focus {
   @apply bg-gray-200;
 }
 .header-nav--active {
-  @apply bg-cyan-600 text-white hover:bg-cyan-600;
+  @apply bg-[#16B13A] text-white hover:bg-[#019c2b];
 }
 .theme--orange .header-nav--active {
   @apply bg-orange-500 hover:bg-orange-500;
@@ -519,10 +519,17 @@ div:focus {
 }
 
 .tit-text {
-  @apply w-28 h-10 text-center text-white bg-cyan-600 text-2xl flex items-center justify-center
+  @apply w-28 h-10 text-center text-white text-lg flex items-center justify-center
 }
+.tit-text {
+  background-image: url(../assets/images/background_tab_title.png);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position:center;
+}
+
 .more-text {
-  @apply w-28 text-center text-green-600 text-lg cursor-pointer flex items-center justify-center
+  @apply w-28 text-center text-[#16B13A] text-[15px] cursor-pointer flex items-center justify-end
 }
 
 .line-clamp {
@@ -536,4 +543,72 @@ div:focus {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
+}
+
+.team-pic {
+  width: 30px;
+  height: 30px;
+  align-items: center;
+}
+
+// 色彩規範
+$c01: #00D11F;
+$c02: #16B13A;
+$c03: #F2F2F2;
+$c04: #FAFAFA;
+$c05: rgba(0, 0, 0, 50%);
+$c06: #000000;
+$c07: #FFFFFF;
+$c08: #333333;
+$c09: #00D11F;
+
+// 陰影規範
+.s01 {
+  box-shadow: 0px 3px 6px 0px rgba(0, 0, 0, 10%);
+}
+
+// 文字規範
+.w01 {
+  font-size: 18px;
+  color: #000000
+}
+.w02 {
+  font-size: 18px;
+  color: #FFFFFF
+}
+.w03 {
+  font-size: 13px;
+  color: #999999;
+}
+.w04 {
+  font-size: 13px;
+  color: #000000;
+}
+.w05 {
+  font-size: 13px;
+  color: #16B13A;
+}
+.w06 {
+  font-size: 14px;
+  color: #FFFFFF;
+}
+.w07 {
+  font-size: 20px;
+  color: #000000;
+}
+.w08 {
+  font-size: 15px;
+  color: #000000;
+}
+.w09 {
+  font-size: 15px;
+  color: #16B13A;
+}
+.w10 {
+  font-size: 18px;
+  color: #999999;
+}
+.w11 {
+  font-size: 18px;
+  color: #16B13A;
 }

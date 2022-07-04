@@ -38,6 +38,7 @@ module.exports = {
         "border-r-2",
         "pb-4",
         "bg-gray-300",
+        /border-.*/,
       ],
     },
   },

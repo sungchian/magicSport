@@ -1,3 +1,10 @@
 <template>
-  <div>123</div>
+  <div class="container download"></div>
 </template>
+
+<style scoped>
+.download {
+  height: 720px;
+  background: green;
+}
+</style>

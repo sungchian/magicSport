@@ -18,7 +18,7 @@
         'lg:ml-16': !open.leftnav,
       }"
     >
-      <main class="p-8">
+      <main class="">
         <slot />
       </main>
     </div>
@@ -28,8 +28,8 @@
 
 <script>
 import { reactive } from "vue";
-import qrCode from "@/assets/images/qr_code.png";
-import topIcon from "@/assets/images/top-icon.jpeg";
+import qrCode from "@/assets/images/btn_float_qrcode.png";
+import topIcon from "@/assets/images/btn_arrow_page_to_top.png";
 export default {
   setup() {
     const open = reactive({

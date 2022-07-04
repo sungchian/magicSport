@@ -140,7 +140,7 @@
                   date.invalid
                     ? 'text-gray-300'
                     : date.isActive
-                    ? 'bg-cyan-600 text-white cursor-pointer'
+                    ? 'bg-[#0E9F6E] text-white cursor-pointer'
                     : date.month === render.month
                     ? 'text-gray-900 hover:bg-gray-100 font-semibold cursor-pointer'
                     : 'text-gray-500 hover:bg-gray-100 font-normal cursor-pointer',
@@ -962,8 +962,8 @@ export default {
     width: 0;
     height: 0;
     border: 3px solid transparent;
-    border-right-color: rgba(8, 145, 178, 1);
-    border-bottom-color: rgba(8, 145, 178, 1);
+    border-right-color: rgb(14, 159, 110);
+    border-bottom-color: rgb(14, 159, 110);
     content: "";
   }
 }

@@ -4,7 +4,7 @@ import createRoutes from "./_app/routes";
 // import { path } from "ramda";
 
 const options = {
-  defaultPath: "/analysis/user",
+  defaultPath: "/main/dashboard",
 };
 const router = createRouter({
   history: createWebHashHistory(process.env.BASE_URL),

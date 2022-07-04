@@ -1,6 +1,6 @@
 <template>
   <ul>
-    <li v-for="node in liveNav" :key="node.id" class="mb-1">
+    <li v-for="node in data.list" :key="node.id" class="mb-1">
       <router-link
         :to="`/live/${node.id}`"
         class="text-base text-gray-900 font-normal rounded-lg whitespace-nowrap flex items-center p-2"
@@ -9,20 +9,18 @@
           'hover:bg-gray-100': `/live/${node.id}` !== key,
         }"
       >
-        {{ node.name }}
+        {{ node.ballardCompetitionName }}
       </router-link>
     </li>
   </ul>
 </template>
 <script>
-import { computed, onMounted } from "vue";
+import { reactive, computed, onMounted } from "vue";
 import { useStore } from "vuex";
 import useI18n from "@/hooks/use-i18n";
 import { useRoute } from "vue-router";
 
-/** constant */
-import liveNav from "@/constants/live";
-
+import { sortWith, ascend, prop } from "ramda";
 /** helper */
 
 export default {
@@ -37,12 +35,30 @@ export default {
     console.log(store.state.route.path);
     const key = computed(() => store.state.route.path);
 
-    onMounted(() => {});
+    const data = reactive({
+      list: [],
+    });
+
+    const getLiveNav = async () => {
+      const res = await store.dispatch("live/_id/read/competitionList");
+      if (res.statusCode === 200) {
+        const listSort = sortWith([ascend(prop("sort"))]);
+        data.list = res.result === null ? [] : listSort(res.result);
+        console.log(data.list);
+      } else {
+        data.list = [];
+      }
+    };
+
+    onMounted(() => {
+      getLiveNav();
+    });
 
     return {
       t,
       key,
-      liveNav,
+      data,
+      getLiveNav,
     };
   },
 };

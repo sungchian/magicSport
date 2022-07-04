@@ -180,7 +180,7 @@ import UpdateModal from "@/page-widgets/ball/chatfilter/update-modal";
 /** components */
 import { mergeDeepRight } from "ramda";
 
-import chatfilter from "@/constants/chatfilter";
+// import chatfilter from "@/constants/home-data-list";
 
 export default {
   breadcrumb: ["MODULE_BALL", "BALL_CHATFILTER_MANAGE"],
@@ -311,7 +311,7 @@ export default {
       t,
       checkboxes,
       conditions,
-      chatfilter,
+      // chatfilter,
       data,
       modal,
       fetch,

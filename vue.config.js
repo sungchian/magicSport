@@ -5,22 +5,23 @@
 module.exports = {
   devServer: {
     // proxy: "https://armani.dev.zsmgoe.link/api/v1",
-    proxy: "https://armani.dev.zsmgoe.link/be/api/v1",
+    proxy: {
+      "/api": {
+        target: "https://ballard.dev.zsmgoe.link/api/v1",
+        // ws: true,
+        // changeOrigin: true,
+        pathRewrite: {
+          "^/api": "", //請求的時候使用這個api就可以
+        },
+      },
+      "/com": {
+        target: "https://farrell.dev.zsmgoe.link/api/v1",
+        pathRewrite: {
+          "^/com": "", //請求的時候使用這個api就可以
+        },
+      },
+    },
   },
-  // transpileDependencies: [/ckeditor5-[^/\\]+[/\\]src[/\\].+\.js$/],
-
-  // configureWebpack: {
-  //   plugins: [
-  //     // CKEditor needs its own plugin to be built using webpack.
-  //     new CKEditorWebpackPlugin({
-  //       // See https://ckeditor.com/docs/ckeditor5/latest/features/ui-language.html
-  //       language: "zh",
-
-  //       // Append translations to the file matching the `app` name.
-  //       translationsOutputFile: /app/,
-  //     }),
-  //   ],
-  // },
 
   // // Vue CLI would normally use its own loader to load .svg and .css files, however:
   // //	1. The icons used by CKEditor must be loaded using raw-loader,

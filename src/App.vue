@@ -14,13 +14,13 @@
 </template>
 
 <script>
-import { computed, onMounted, inject } from "vue";
+import { computed, onMounted } from "vue";
 import { useStore } from "vuex";
 import { isNil, defaultTo, path } from "ramda";
 
 export default {
   setup() {
-    const storage = inject("$storage");
+    // const storage = inject("$storage");
     const store = useStore();
     const key = computed(() => store.state.route.path);
     const layout = computed(() => {
@@ -33,10 +33,12 @@ export default {
       return currentLayout;
     });
 
-    onMounted(() => {
-      const theme = storage.get("theme");
-      document.getElementById("app").className = "";
-      document.getElementById("app").classList.add(`theme--${theme}`);
+    onMounted(async () => {
+      const res = await store.dispatch("auth/getDeviceToken");
+      console.log(res);
+      if (res.statusCode !== 200) {
+        alert("GetTokenError");
+      }
     });
 
     return {
