@@ -18,7 +18,7 @@
 import { reactive, computed, onMounted } from "vue";
 import { useStore } from "vuex";
 import useI18n from "@/hooks/use-i18n";
-import { useRoute } from "vue-router";
+// import { useRoute } from "vue-router";
 
 import { sortWith, ascend, prop } from "ramda";
 /** helper */
@@ -30,9 +30,6 @@ export default {
   setup() {
     const store = useStore();
     const { t } = useI18n();
-    const route = useRoute();
-    console.log(route);
-    console.log(store.state.route.path);
     const key = computed(() => store.state.route.path);
 
     const data = reactive({
@@ -44,7 +41,6 @@ export default {
       if (res.statusCode === 200) {
         const listSort = sortWith([ascend(prop("sort"))]);
         data.list = res.result === null ? [] : listSort(res.result);
-        console.log(data.list);
       } else {
         data.list = [];
       }

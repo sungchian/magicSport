@@ -2,6 +2,7 @@
   <div class="overflow-x-auto">
     <div class="align-middle inline-block min-w-full">
       <div class="shadow overflow-hidden">
+        <slot />
         <table
           ref="el"
           class="custom-table table-fixed min-w-full divide-y divide-gray-200"

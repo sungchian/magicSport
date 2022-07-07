@@ -3,11 +3,15 @@
     <the-live-nav class="w-1/6 mr-10"></the-live-nav>
     <div class="right w-5/6">
       <div class="block-title flex justify-between border-b-2">
-        <span class="tit-text inline-block">比赛直播</span>
+        <span class="tit-text inline-block">{{ t("$field.live") }}</span>
         <div class="w-32">
           <DatetimePicker
             v-model="form.date"
-            placeholder="請選擇直播日期"
+            :placeholder="
+              t('form.placeholder.input', {
+                field: t('$field.date'),
+              })
+            "
             tools:today
             tools:clear
             no:time
@@ -30,16 +34,16 @@
 
           <tr
             class="hover:bg-gray-200 h-16 cursor-pointer"
-            :class="{ 'bg-gray-100': row % 2 }"
+            :class="{ 'bg-[#FAFAFA]': row % 2 }"
             v-for="row in 5"
             :key="`row-${row}`"
             @click="competitionInfo"
           >
-            <td class="text-center">time</td>
-            <td class="text-center">round</td>
+            <td class="text-center w08">time</td>
+            <td class="text-center w08">round</td>
             <td class="text-center h-full">
-              <div class="flex justify-end">
-                <div>teamA&nbsp;&nbsp;</div>
+              <div class="flex justify-end items-center">
+                <div class="w08">teamA&nbsp;&nbsp;</div>
                 <img
                   src="../../assets/images/flag.png"
                   alt=""
@@ -47,7 +51,7 @@
                 />
               </div>
             </td>
-            <td class="text-center">vs-score</td>
+            <td class="text-center w08">vs-score</td>
             <td class="text-center h-full">
               <div class="flex justify-start">
                 <img
@@ -55,13 +59,11 @@
                   alt=""
                   class="team-pic h-full"
                 />
-                <div>&nbsp;&nbsp;teamB</div>
+                <div class="w08">&nbsp;&nbsp;teamB</div>
               </div>
             </td>
 
-            <td class="text-center text-green-600" style="font-size: 14px">
-              高清解說
-            </td>
+            <td class="text-center w09">{{ t("$field.explanation") }}</td>
           </tr>
         </template>
       </Table>
@@ -86,7 +88,7 @@ export default {
     // const store = useStore();
     const { t, setPrefix } = useI18n();
     setPrefix({
-      $current: "pages.account.manager",
+      $current: "pages.live._id",
       $field: "$current.field",
     });
 

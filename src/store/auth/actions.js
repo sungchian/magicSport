@@ -63,6 +63,11 @@ const actions = {
     }
     return res;
   },
+
+  async getVersion() {
+    const res = await axios.get("api/sys/version/query");
+    return res;
+  },
 };
 
 export default actions;

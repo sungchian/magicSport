@@ -1,5 +1,5 @@
 <template>
-  <Dropdown placement="left">
+  <Dropdown placement="right">
     <template #trigger="{ isOpen, onOpen }">
       <div class="relative">
         <input

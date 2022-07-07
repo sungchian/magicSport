@@ -21,30 +21,59 @@
       <main class="">
         <slot />
       </main>
+      <footer
+        class="footer flex w-full items-center justify-center bg-[#333333]"
+      >
+        <div class="copyright p-8 w11">
+          CopyRight Magics Sports 2022 / {{ version }}
+        </div>
+      </footer>
     </div>
   </div>
   <the-alert />
 </template>
 
 <script>
-import { reactive } from "vue";
+import { ref, reactive, onMounted } from "vue";
+import { useStore } from "vuex";
 import qrCode from "@/assets/images/btn_float_qrcode.png";
 import topIcon from "@/assets/images/btn_arrow_page_to_top.png";
 export default {
   setup() {
+    const store = useStore();
+
     const open = reactive({
       topnav: false,
       leftnav: true,
     });
 
+    let version = ref("");
+
+    const getVersion = async () => {
+      const res = await store.dispatch("auth/getVersion");
+      console.log(version);
+      if (res.statusCode === 0) {
+        version.value = res.result.appVersionLast;
+      } else {
+        version.value = "";
+      }
+    };
+
     const scrollToTop = async () => {
       window.scrollTo({ top: 0, behavior: "smooth" });
     };
+
+    onMounted(() => {
+      getVersion();
+    });
+
     return {
       open,
       qrCode,
       topIcon,
+      version,
       scrollToTop,
+      getVersion,
     };
   },
 };

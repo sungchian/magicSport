@@ -6,7 +6,7 @@
       <div class="flex items-center justify-around">
         <div class="flex items-center justify-start">
           <a class="header-title">
-            <span class="header-title__text flex items-center">
+            <span class="header-title__text flex items-center mr-12">
               <img
                 src="../assets/images/icon_logo_header.png"
                 alt=""
@@ -21,11 +21,11 @@
           </a>
           <ul class="list-none pl-2.5 lg:pl-12 lg:flex hidden">
             <router-link
-              v-for="category in categories"
+              v-for="category in navHeader"
               :key="category.code"
               :data-link="category.to"
               :to="category.to"
-              class="inline-flex px-5 items-center whitespace-nowrap -my-8 font-medium cursor-pointer hover:bg-gray-200 text-lg"
+              class="header inline-flex px-5 items-center whitespace-nowrap -my-8 font-medium cursor-pointer hover:bg-gray-200 text-lg"
               :class="[category.active && 'header-nav--active']"
             >
               <li>
@@ -61,7 +61,7 @@
   <div class="fixed inset-0 z-20 lg:hidden" v-show="topnav">
     <ul class="list-none mt-16 p-4 bg-white">
       <router-link
-        v-for="category in categories"
+        v-for="category in navHeader"
         :key="category.code"
         :data-link="category.to"
         :to="category.to"
@@ -86,11 +86,8 @@ import { useStore } from "vuex";
 import { computed } from "vue";
 import useI18n from "@/hooks/use-i18n";
 /** constant */
-import { modules, paths } from "@/constants/nav";
-import tree from "@/constants/_tree";
+import navHeader from "@/constants/nav-header";
 /** widget */
-/** helper */
-import { map, split, keys } from "ramda";
 export default {
   name: "TheHeader",
   components: {},
@@ -105,27 +102,27 @@ export default {
     const userName = computed(() => {
       return store.state.auth.user.username;
     });
-    const tempCategories = computed(() => {
-      const [, cate] = split("/", store.state.route.path);
-      const getFirstChildLink = (node) =>
-        node
-          ? paths[node.children[0]?.code] ?? getFirstChildLink(node.children[0])
-          : null;
-      return map(
-        (code) => ({
-          code,
-          to: getFirstChildLink(tree[code]),
-          content: t(`node.${code}`),
-          active: cate === modules[code],
-        }),
-        keys(tree)
-      );
-    });
-    const categories = computed(() => {
-      return tempCategories.value.filter((item) => {
-        return item.code !== "MODULE_SETTING";
-      });
-    });
+    // const tempCategories = computed(() => {
+    //   const [, cate] = split("/", store.state.route.path);
+    //   const getFirstChildLink = (node) =>
+    //     node
+    //       ? paths[node.children[0]?.code] ?? getFirstChildLink(node.children[0])
+    //       : null;
+    //   return map(
+    //     (code) => ({
+    //       code,
+    //       to: getFirstChildLink(tree[code]),
+    //       content: t(`node.${code}`),
+    //       active: cate === modules[code],
+    //     }),
+    //     keys(tree)
+    //   );
+    // });
+    // const categories = computed(() => {
+    //   return tempCategories.value.filter((item) => {
+    //     return item.code !== "MODULE_SETTING";
+    //   });
+    // });
     const toggleTopNav = () => {
       emit("update:leftnav", false);
       emit("update:topnav", !props.topnav);
@@ -143,7 +140,7 @@ export default {
     return {
       t,
       userName,
-      categories,
+      navHeader,
       open,
       toggleTopNav,
       toggleLeftNav,
@@ -152,3 +149,11 @@ export default {
   },
 };
 </script>
+
+<style scoped>
+.header.router-link-active,
+.header.router-link-exact-active {
+  background: #16b13a;
+  color: #ffffff;
+}
+</style>

@@ -1,5 +1,5 @@
 const homeDataList = [
-  { id: 1, name: "中甲" },
+  { id: 1, name: "中超" },
   { id: 2, name: "英超" },
   { id: 3, name: "德甲" },
   { id: 4, name: "西甲" },

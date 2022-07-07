@@ -3,7 +3,7 @@ import store from "@/store";
 import axios from "axios";
 
 const refreshInstance = axios.create({
-  baseURL: process.env.VUE_APP_REMOTE_API,
+  baseURL: process.env.VUE_APP_REMOTE_API2,
   validateStatus(status) {
     return status >= 200 && status < 404;
   },

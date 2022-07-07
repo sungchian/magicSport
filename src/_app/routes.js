@@ -15,6 +15,7 @@ const createRoutes = (opts) => {
       name: "default-path",
       redirect: { name: options.defaultPath },
     },
+    { path: "/live", name: "default-live", redirect: "/live/-1" },
     ...pages,
     {
       path: "/404",
